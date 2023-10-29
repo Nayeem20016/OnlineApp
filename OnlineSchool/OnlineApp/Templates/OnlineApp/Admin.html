@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <center>
+            <h1 style="font-family: Arial, Helvetica, sans-serif; color: white; font-size:x-large;">Admin Login</h1>
+            <input type="text" class="icon-rtl" value placeholder="Username" name="username" id="username"
+                required><br><br>
+            <input type="password" class="icon" value placeholder="Password" name="password" id="password"
+                required><br><br>
+            <button type="submit" style="font-weight: bold;" onclick="auth()">Login</button><br><br>
+            Forgot<a href="#"
+                style="font-size: 17px;font-family: Arial, Helvetica, sans-serif; color: rgb(69, 5, 247); text-decoration: none;">
+                password? </a>
+        </center>
+    </div>
+    <script>
+        function auth() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username == "123" && password == "123") {
+                window.location.assign('home');
+                alert("Login Successfully");
+            }
+            else {
+                alert("Invalid Information");
+                return;
+            }
+        }
+    </script>
+</body>
+
+</html>
