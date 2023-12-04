@@ -1,0 +1,58 @@
+
+
+<!-- {% block content %}  -->
+  <!-- <h1>Courses</h1>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Credits</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in course %}
+        <tr>
+          <td>{{ item.title }}</td>
+          <td>{{ item.credits }}</td>
+          <td>{{ item.department }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table> -->
+<!-- {% endblock %} -->
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Courses</h2>
+
+<table style="width:100%">
+    <div class="table">
+  <tr>
+    <th>Title</th>
+        <th>Credits</th>
+        <th>Department</th>
+  </tr>
+  <tr>
+    {% for item in course %}
+        <tr>
+          <td>{{ item.title }}</td>
+          <td>{{ item.credits }}</td>
+          <td>{{ item.department }}</td>
+        </tr>
+      {% endfor %}
+  </tr>
+</div>
+</table>
+
+
+
+</body>
+</html>

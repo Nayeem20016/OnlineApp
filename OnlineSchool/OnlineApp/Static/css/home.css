@@ -114,6 +114,7 @@ header .image-text .header-text{
 }
 
 .sidebar header .toggle{
+    cursor: pointer;
     position: absolute;
     top: 50%;
     right: -25px;
@@ -131,6 +132,7 @@ header .image-text .header-text{
 }
 
 .sidebar.close header .toggle{
+    cursor: pointer;
     transform: translateY(-50%);
 }
 
@@ -159,3 +161,21 @@ header .image-text .header-text{
     flex-direction: column;
     justify-content: space-between;
 }
+
+.content{
+    display: flex;
+}
+
+
+.sidebar main{
+    position: relative;
+   
+    width: fit-content;
+    padding-top: 20%;
+    padding-left: 50px;
+  }
+  .sidebar  .main-top{
+    display: flex;
+    width: fit-content;
+    
+  }

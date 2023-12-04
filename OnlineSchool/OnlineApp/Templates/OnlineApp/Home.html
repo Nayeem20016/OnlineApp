@@ -5,15 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Course Details</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <script type="text/javascript">
-        function preventback() { window.history.forward() };
-        setTimeout("preventback()", 0);
-        window.onunload = function () { null; }
-    </script>
 </head>
 
 <body>
@@ -25,37 +20,38 @@
                 </span>
 
                 <div class="text header-text">
-                    <span class="name">Online School </span>
+                    <span class="name">Online School</span>
                     <span class="work">Management</span>
                 </div>
             </div>
-
             <i class='bx bx-chevron-right toggle'></i>
+           
         </header>
 
         <div class="menu-bar">
             <div class="menu">
                 <li class="nav-link">
                     <a href="#">
-                        <i class="fa-solid fa-house icon" ></i>
-                        <span class="text nav-text">Dashboard</span></a>
+                        <i class="fa-solid fa-house icon"></i>
+                        <span class="text nav-text">Dashboard</span>
+                    </a>
                 </li>
                 <ul class="menu-links">
                     <li class="nav-link">
                         <a href="#">
-                            <i class="fa-solid fa-graduation-cap icon" ></i>
+                            <i class="fa-solid fa-graduation-cap icon"></i>
                             <span class="text nav-text">Student</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="#">
-                            <i class="fa-solid fa-chalkboard-user icon" ></i>
+                            <i class="fa-solid fa-chalkboard-user icon"></i>
                             <span class="text nav-text">Teacher</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="#">
-                            <i class="fa-solid fa-book-open icon" ></i>
+                            <i class="fa-solid fa-book-open icon"></i>
                             <span class="text nav-text">Course</span>
                         </a>
                     </li>
@@ -63,16 +59,22 @@
             </div>
             <div class="bottom-content">
                 <li class="nav-link">
-                        <a href="{% url 'admin-login' %}">
-                            <i class="fa-solid fa-right-from-bracket icon" ></i>
-                            <span class="text nav-text">Logout</span>
-                        </a>
-                    </li>
+                    <a href="{% url 'admin-login' %}">
+                        <i class="fa-solid fa-right-from-bracket icon"></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
             </div>
         </div>
+        <section class="main">
+            <div class="main-top">
+                <h1>Attendance</h1>
+                <i class="fas fa-user-cog"></i>
+            </div>
     </nav>
+   
 
-    <script src = "{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 
