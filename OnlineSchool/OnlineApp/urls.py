@@ -7,13 +7,11 @@ urlpatterns = [
     path('home', views.Home, name= 'Home'),
     path('login', views.Admin, name= 'admin-login'),
     path('course', views.Courses, name= 'course'),
+    path('teacher', views.Teachers, name= 'teacher'),
+    path('student', views.Students, name= 'student'),
     
 
-    #  display all course as a list 
-    #  path('course', views.courses),
-
-    # show course details, course teacher details, and list of students in this couse
-    # path('course/show', views.showCourse),
+   
     
     
 ]

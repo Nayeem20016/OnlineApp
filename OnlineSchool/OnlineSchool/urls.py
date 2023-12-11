@@ -8,5 +8,7 @@ urlpatterns = [
     path('login', include('OnlineApp.urls')),
     path('home', include('OnlineApp.urls')),
     path('course', include('OnlineApp.urls')),
-    
+    path('teacher', include('OnlineApp.urls')),
+    path('student', include('OnlineApp.urls')),
+
 ]

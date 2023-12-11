@@ -5,14 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Details</title>
+    <title>Teacher Details</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="{% static 'css/course.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'css/teacher.css' %}">
 </head>
 <style>
-    table,th,td {
+    table,
+    th,
+    td {
         border: 1px solid black;
     }
 </style>
@@ -27,7 +28,9 @@
                         <span class="nav-item">Online School <br> Management</span>
                     </a>
                 </li>
-                
+                <li>
+
+                </li>
                 <li>
                     <a href="{% url 'student' %}" class="item">
                         <i class="fa-solid fa-graduation-cap icon"></i>
@@ -55,58 +58,60 @@
             </ul>
         </nav>
 
-        
-        
-            <div class="table">
-                <h1 class="head" style="display: inline;">Course</h1>
-                <div class="add"><button onclick="displayOverlay()">Add Course</button></div>
-                <table style="width:100%">
-                    <tr>
-                        <th>Title</th>
-                        <th>Credits</th>
-                        <th>Department</th>
-                    </tr>
-                    <tr>
-                        {% for item in course %}
-                    <tr>
-                        <td>{{ item.title }}</td>
-                        <td>{{ item.credits }}</td>
-                        <td>{{ item.department }}</td>
-                    </tr>
-                    {% endfor %}
-                    </tr>
-                </table>
-            </div>
+        <div class="table">
+            <h1 class="head">Teacher</h1>
+            <div class="add"><button onclick="displayOverlay()">Add Teacher</button></div>
+            <table style="width:100%">
+                <tr>
+                    <th>Name</th>
+                    <th>Courses</th>
+                    <th>Department</th>
+                </tr>
+                {% for item in teacher %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>
+                        {% for course in item.courses.all %}
+                        {{ course.title }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{{ item.department }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+
+
     </div>
-    
+    <div class="overlay" id="teacherOverlay">
+        <div class="teacher-container">
 
-<div class="overlay" id="courseOverlay">
-    <div class="course-container">
-        <h2>Add Course</h2>
-        <form action="{% url 'course' %}" class="course-info" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Submit">
-            <button type="button" onclick="closeOverlay()">Close</button>
-        </form>
+            <form action="{% url 'teacher' %}" class="teacher-info" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit">
+                <button type="button" onclick="closeOverlay()">Close</button>
+            </form>
+        </div>
     </div>
-</div>
 
 
-<script>
-    function displayOverlay() {
-        var overlay = document.getElementById("courseOverlay");
-        overlay.style.display = "flex"; 
-    }
+    <script>
+        function displayOverlay() {
+            var overlay = document.getElementById("teacherOverlay");
+            overlay.style.display = "flex";
+        }
 
 
-    function closeOverlay() {
-        var overlay = document.getElementById("courseOverlay");
-        overlay.style.display = "none"; 
-    }
+        function closeOverlay() {
+            var overlay = document.getElementById("teacherOverlay");
+            overlay.style.display = "none";
+        }
 
-</script>
+    </script>
+
+
 </body>
 
 </html>
-</span>

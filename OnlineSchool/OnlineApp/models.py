@@ -37,6 +37,7 @@ class Student(models.Model):
 class TeachesCourse(models.Model):
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    #department = models.ForeignKey(Department, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.teacher.name} teaches {self.course.title}"
@@ -45,6 +46,8 @@ class TeachesCourse(models.Model):
 class TakesCourse(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    # department = models.ForeignKey(Department, on_delete=models.CASCADE)
+
     def __str__(self):
         return f"{self.student.name} teaches {self.course.title}"
-    
+
